@@ -21,7 +21,7 @@
   - CSS/Bootstrap styling
   
 ## Description
-This website is in interactive line graph that allows the visitor to compare various epidemics/pandemics in recent history (e.g. the 2010 Hispaniola Cholera outbreak, COVID-19, etc.) in terms of total deaths, day by day. These features are included for interactivity with the website:
+This website is an interactive line graph that allows the visitor to compare various epidemics/pandemics in recent history (e.g. the 2010 Hispaniola Cholera outbreak, COVID-19, etc.) in terms of total deaths, day by day. These features are included for interactivity with the website:
 * Hiding specific lines to focus more closely on the remaining outbreaks
 * Choose the amount of days to look at
   - By default, the data only shows up to 300 days into an outbreak.
