@@ -3,8 +3,8 @@
 **Roster/Roles**
 - Kevin Li:
   - Project manager
-  - Update README, makes sure devlog is up to date
-  - Update design doc to reflect changes  to project midway through
+  - Update README, make sure devlog is up to date
+  - Update design doc to reflect changes to project midway through
   - Some coding for the D3 part (specifically hovering over a line for more detailed info)
 - Derek Leung
   - D3 work
@@ -26,8 +26,8 @@ This website is an interactive line graph that allows the visitor to compare var
 * Choose the amount of days to look at
   - By default, the data only shows up to 300 days into an outbreak.
   - The user may set a minimum of 100 days, and a maximum of 801 days (the extent of the dataset used).
-* Hovering over a point on a line for more granular day (e.g. on the 65th day of the COVID-19 outbreak, 3202 people have died).
-  - Compares the other outbreaks by that point in time with the equivalent for the COVID-19 for more applicability to current times (total amount of deaths this many days into the start of their respective outbreaks)
+* Hovering over a point on a line for more granular data (e.g. on the 65th day of the COVID-19 outbreak, 3202 people have died).
+  - Compares the other outbreaks by that point in time with the equivalent for COVID-19 for more applicability to current times (total amount of deaths this many days into the start of their respective outbreaks)
   
 # Instructions for running this project
 
