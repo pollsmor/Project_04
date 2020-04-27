@@ -1,7 +1,15 @@
 Project 4 devlog
 
 kevinL -- 2020-04-26 20:00
-- Design doc
+- Design doc (beta)
   - Basic idea down
   - Separation of minimum viable product and nice to have features
   - Still need to do: roles of each group member, component map, why Bootstrap or Foundation, data from backend to frontend diagram
+  
+kevinL -- 2020-04-27 16:30
+- Design doc v1.0
+  - Roles assigned
+  - Component map/available features
+  - Backend to frontend data mechanism diagram
+  - Bootstrap vs. Foundation reasoning
+- README updated to bring in line with ddoc v1.0, launch codes (shamelessly copypasted from previous project)
