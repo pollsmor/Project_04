@@ -1,3 +1,7 @@
 Project 4 devlog
 
-firstL -- 2020-04-20 13:37
+kevinL -- 2020-04-26 20:00
+- Design doc
+  - Basic idea down
+  - Separation of minimum viable product and nice to have features
+  - Still need to do: roles of each group member, component map, why Bootstrap or Foundation, data from backend to frontend diagram
