@@ -13,3 +13,6 @@ kevinL -- 2020-04-27 16:30
   - Backend to frontend data mechanism diagram
   - Bootstrap vs. Foundation reasoning
 - README updated to bring in line with ddoc v1.0, launch codes (shamelessly copypasted from previous project)
+
+kevinL -- 2020-04-29 07:30
+- Add project description to ddoc as per peer review
