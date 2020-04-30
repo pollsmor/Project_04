@@ -13,3 +13,19 @@ kevinL -- 2020-04-27 16:30
   - Backend to frontend data mechanism diagram
   - Bootstrap vs. Foundation reasoning
 - README updated to bring in line with ddoc v1.0, launch codes (shamelessly copypasted from previous project)
+
+ihatequarantine -- 2020-04-29 09:30
+Teams that reviewed ddoc: 
+- redesigned-telegram
+  - Very thorough and defined
+  - Clear explanations
+  - Lacks description/purpose of project
+- I am not ok with this
+  - Lacks description
+  - Component map very thorough
+  - Very detailed
+  
+Modifications to design doc:
+- Added project description as per feedback
+
+Timeline adjustments: our projected finishing date was the 11th of May on the dot, so we should not have to do anything differently.
