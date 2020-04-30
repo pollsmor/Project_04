@@ -29,3 +29,6 @@ Modifications to design doc:
 - Added project description as per feedback
 
 Timeline adjustments: our projected finishing date was the 11th of May on the dot, so we should not have to do anything differently.
+
+kevinL -- 2020-04-30 08:20
+- Completed Task the F-I-F
