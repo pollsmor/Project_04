@@ -5,7 +5,7 @@ kevinL -- 2020-04-26 20:00
   - Basic idea down
   - Separation of minimum viable product and nice to have features
   - Still need to do: roles of each group member, component map, why Bootstrap or Foundation, data from backend to frontend diagram
-  
+
 kevinL -- 2020-04-27 16:30
 - Design doc v1.0
   - Roles assigned
@@ -15,7 +15,7 @@ kevinL -- 2020-04-27 16:30
 - README updated to bring in line with ddoc v1.0, launch codes (shamelessly copypasted from previous project)
 
 ihatequarantine -- 2020-04-29 09:30
-Teams that reviewed ddoc: 
+Teams that reviewed ddoc:
 - redesigned-telegram
   - Very thorough and defined
   - Clear explanations
@@ -24,7 +24,7 @@ Teams that reviewed ddoc:
   - Lacks description
   - Component map very thorough
   - Very detailed
-  
+
 Modifications to design doc:
 - Added project description as per feedback
 
@@ -32,3 +32,7 @@ Timeline adjustments: our projected finishing date was the 11th of May on the do
 
 kevinL -- 2020-04-30 08:20
 - Completed Task the F-I-F
+
+kevinL -- 2020-05-01 10:00
+- Transposed columns to rows for dataset to play nice with csv.reader()
+- Code to obtain data as per spec on ddoc
