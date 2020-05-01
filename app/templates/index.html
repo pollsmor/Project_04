@@ -8,7 +8,13 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    <button id="render">Render</button>
+    <button id="transition">Transition</button>
+    <br><br>
+    <svg id="svg"></svg>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='d3.js') }}"></script>
   </body>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </html>

@@ -36,3 +36,7 @@ kevinL -- 2020-04-30 08:20
 kevinL -- 2020-05-01 10:00
 - Transposed columns to rows for dataset to play nice with csv.reader()
 - Code to obtain data as per spec on ddoc
+
+derekL -- 2020-05-01 17:37
+- Added svg
+- Added axes to line graph 
