@@ -39,4 +39,7 @@ kevinL -- 2020-05-01 10:00
 
 derekL -- 2020-05-01 17:37
 - Added svg
-- Added axes to line graph 
+- Added axes to line graph
+
+derekL -- 2020-05-01 18:06
+- Added axes labels
