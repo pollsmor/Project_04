@@ -16,8 +16,10 @@ file = open(CSV_FILE)
 data = csv.reader(file)
 for row in data:
     arr = []
-    for day in row[1:]: #first column is the disease name not a day's stats
-        arr.append(day)
+    i = 1
+    for col in row[1:]: #first column is the disease name not a day's stats
+        arr.append({'day': i, 'deaths': col})
+        i += 1
 
     epidemics_dict[epidemic_names[epidemic_idx]] = arr
     epidemic_idx += 1
