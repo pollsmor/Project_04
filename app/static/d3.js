@@ -3,6 +3,8 @@ var x,y;
 var width = 500;
 var height = 500;
 
+$("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
+
 var render = function() {
   var svg = d3.select("svg")
     .attr("width", width)
