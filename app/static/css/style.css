@@ -1,8 +1,19 @@
-h1, h2 {
+h1, h2, .line {
   margin-left: 10px;
   margin-right: 10px;
 }
 
+.line {
+  height: 5px;
+  width: 50px;
+  display: inline-block;
+  position: relative;
+  top: -4px;
+}
+
+.name {
+  cursor: pointer;
+}
 
 .tt .tt-text {
   visibility: hidden;

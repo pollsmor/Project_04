@@ -7,7 +7,6 @@
 		<link href="../static/css/style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello World!</h1>
     <div class="tt">
     <button id="render">Render</button>
       <span class="tt-text">Renders the graph</span>
@@ -18,6 +17,49 @@
     </div>
     <br><br>
     <svg id="svg"></svg>
+
+    <div id="legend">
+      <h2>Legend</h2>
+      <div class="line" style="background-color: BlueViolet;"></div>
+      <span class="name">Cholera (Hispaniola, 2010-13)</span><br>
+
+      <div class="line" style="background-color: DodgerBlue;"></div>
+      <span class="name">COVID-19 (World, 2019-now)</span><br>
+
+      <div class="line" style="background-color: DarkGreen;"></div>
+      <span class="name">Ebola (West Africa, 2014)</span><br>
+
+      <div class="line" style="background-color: DarkSlateGray;"></div>
+      <span class="name">Swine Flu (World, 2009-10)</span><br>
+
+      <div class="line" style="background-color: Gold;"></div>
+      <span class="name">SARS (China & Hong Kong, 2002-04)</span><br>
+
+      <div class="line" style="background-color: IndianRed;"></div>
+      <span class="name">Measles (DRC, 2019-now)</span><br>
+
+      <div class="line" style="background-color: HotPink;"></div>
+      <span class="name">Measles (DRC, 2011-14)</span><br>
+
+      <div class="line" style="background-color: SandyBrown;"></div>
+      <span class="name">Cholera (Zimbabwe, 2008-09)</span><br>
+
+      <div class="line" style="background-color: Silver;"></div>
+      <span class="name">Cholera (Yemen, 2016-now)</span><br>
+
+      <div class="line" style="background-color: GoldenRod;"></div>
+      <span class="name">Ebola (DRC & Uganda, 2018-now)</span><br>
+
+      <div class="line" style="background-color: SteelBlue;"></div>
+      <span class="name">Swine Flu (India, 2015)</span><br>
+
+      <div class="line" style="background-color: SpringGreen;"></div>
+      <span class="name">Meningitis (World, 2009-10)</span><br>
+
+      <div class="line" style="background-color: Thistle;"></div>
+      <span class="name">MERS (World, 2012-now)</span><br>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>

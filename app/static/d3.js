@@ -1,12 +1,9 @@
-var renderbutton = document.getElementById('render');
-var transitionbutton = document.getElementById('transition');
-
 var svg;
 var x,y;
 var width = 500;
 var height = 500;
 
-var render = function(e){
+var render = function() {
   var svg = d3.select("svg")
     .attr("width", width)
     .attr("height",height);
@@ -38,11 +35,4 @@ var render = function(e){
         .text("Deaths per day");
 };
 
-var transition = function(e){
-
-};
-
-
-
-renderbutton.addEventListener('click', render);
-transitionbutton.addEventListener('click', transition);
+render();
