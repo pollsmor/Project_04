@@ -2,3 +2,24 @@ h1, h2 {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+
+.tt .tt-text {
+  visibility: hidden;
+  position: absolute;
+  top:30px;
+  left: 0px;
+  z-index: 1;
+  background: black;
+  color: white;
+}
+
+.tt:hover .tt-text {
+  visibility: visible;
+}
+
+.tt{
+  float:left;
+  position: relative;
+  padding-right: 100px;
+}
