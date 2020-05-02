@@ -43,3 +43,9 @@ derekL -- 2020-05-01 17:37
 
 derekL -- 2020-05-01 18:06
 - Added axes labels
+
+justinS -- 2020-05-01 21:31
+-Added a tooltip span underneath buttons for explanations
+
+justinS -- 2020-05-01 21:36
+-Styled tool tip and aligned divs on page
