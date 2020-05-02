@@ -12,6 +12,9 @@ h1, h2 {
   z-index: 1;
   background: black;
   color: white;
+  border-radius: 5px;
+  padding:5px;
+  opacity:.5;
 }
 
 .tt:hover .tt-text {
