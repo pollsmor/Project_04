@@ -7,7 +7,22 @@ var days = 300;
 
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
 
+var rendered = {'cholera-hispaniola-2010': false,
+                'covid-19': true,
+                'ebola-wafrica-2014' : false,
+                'swine-world-2009' : false,
+                'sars' : false,
+                'measles-2019' : false,
+                'measles-2011' : false,
+                'cholera-zimbabwe-2008' : false,
+                'cholera-yemen-2016' : false,
+                'ebola-drcuganda-2018' : false,
+                'swine-india-2015' : false,
+                'meningitis' : false,
+                'mers' : false};
+
 var render = function() {
+
   svg.attr("width", width).attr("height", height);
 
   var x = d3.scaleLinear()
@@ -42,19 +57,29 @@ var render = function() {
     .x(d => x(d.day))
     .y(d => y(d.deaths));
 
-  svg.append("path")
-      .attr("transform", "translate(80, 10)")
-      .attr("fill", "none")
-      .attr("stroke", "DodgerBlue")
-      .attr("stroke-width", 1.5)
-      .attr("d", line(data['covid-19']));
+  for (var name in rendered){
+    if (rendered[name]){
+        svg.append("path")
+          .attr("transform", "translate(80, 10)")
+          .attr("fill", "none")
+          .attr("stroke", "DodgerBlue")
+          .attr("stroke-width", 1.5)
+          .attr("d", line(data[name]));
+      }
+    };
+};
 
-  svg.append("path")
-      .attr("transform", "translate(80, 10)")
-      .attr("fill", "none")
-      .attr("stroke", "DarkSlateGray")
-      .attr("stroke-width", 1.5)
-      .attr("d", line(data['swine-world-2009']));
+var toggle = function(e){
+  name = e.target.getAttribute("data-name");
+  rendered[name] = !(rendered[name]);
+  svg.selectAll("path").remove();
+  render();
+};
+
+var eps = document.getElementsByClassName("name");
+
+for (i = 0; i < eps.length; i++){
+  eps[i].addEventListener("click", toggle);
 };
 
 render();
