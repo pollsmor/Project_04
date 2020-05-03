@@ -49,3 +49,11 @@ justinS -- 2020-05-01 21:31
 
 justinS -- 2020-05-01 21:36
 -Styled tool tip and aligned divs on page
+
+kevinL -- 2020-05-02 18:30
+- Preliminary legend layout (still has no toggle functionality)
+- Tooltip now utilizes Bootstrap
+- Got lines to show
+  - Need to find a way to deal with COVID-19, since it's ongoing and the data drops to 0 ~115 days in.
+- Fixed X/Y scales
+- Will definitely have to fix the issue of magic numbers someday
