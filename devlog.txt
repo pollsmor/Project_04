@@ -57,3 +57,7 @@ kevinL -- 2020-05-02 18:30
   - Need to find a way to deal with COVID-19, since it's ongoing and the data drops to 0 ~115 days in.
 - Fixed X/Y scales
 - Will definitely have to fix the issue of magic numbers someday
+
+justinS -- 2020-05-03 19:21
+- Made the line display toggleable by clicking the legends
+- Colored lines according to the legend
