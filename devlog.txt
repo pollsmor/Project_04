@@ -61,3 +61,6 @@ kevinL -- 2020-05-02 18:30
 justinS -- 2020-05-03 19:21
 - Made the line display toggleable by clicking the legends
 - Colored lines according to the legend
+
+kevinL -- 2020-05-03 21:30
+- When toggling in the legend, it now shows visual feedback (grays out when disabled)

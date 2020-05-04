@@ -71,8 +71,8 @@ var render = function() {
     .x(d => x(d.day))
     .y(d => y(d.deaths));
 
-  for (var name in rendered){
-    if (rendered[name]){
+  for (var name in rendered) {
+    if (rendered[name]) {
         svg.append("path")
           .attr("transform", "translate(80, 10)")
           .attr("fill", "none")
@@ -83,7 +83,9 @@ var render = function() {
     };
 };
 
-var toggle = function(e){
+var toggle = function(e) {
+  if (e.target.style.color === "gray") e.target.style.color = 'black';
+  else e.target.style.color = "gray";
   name = e.target.getAttribute("data-name");
   rendered[name] = !(rendered[name]);
   svg.selectAll("path").remove();
@@ -92,7 +94,7 @@ var toggle = function(e){
 
 var eps = document.getElementsByClassName("name");
 
-for (i = 0; i < eps.length; i++){
+for (i = 0; i < eps.length; i++) {
   eps[i].addEventListener("click", toggle);
 };
 
