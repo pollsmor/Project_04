@@ -7,19 +7,19 @@ var days = 300;
 
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
 
-var rendered = {'cholera-hispaniola-2010': false,
+var rendered = {'cholera-hispaniola-2010': true,
                 'covid-19': true,
-                'ebola-wafrica-2014' : false,
-                'swine-world-2009' : false,
-                'sars' : false,
-                'measles-2019' : false,
-                'measles-2011' : false,
-                'cholera-zimbabwe-2008' : false,
-                'cholera-yemen-2016' : false,
-                'ebola-drcuganda-2018' : false,
-                'swine-india-2015' : false,
-                'meningitis' : false,
-                'mers' : false};
+                'ebola-wafrica-2014' : true,
+                'swine-world-2009' : true,
+                'sars' : true,
+                'measles-2019' : true,
+                'measles-2011' : true,
+                'cholera-zimbabwe-2008' : true,
+                'cholera-yemen-2016' : true,
+                'ebola-drcuganda-2018' : true,
+                'swine-india-2015' : true,
+                'meningitis' : true,
+                'mers' : true};
 
 var colors = {'cholera-hispaniola-2010': "BlueViolet",
                 'covid-19': "DodgerBlue",
