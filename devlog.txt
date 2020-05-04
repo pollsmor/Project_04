@@ -64,3 +64,7 @@ justinS -- 2020-05-03 19:21
 
 kevinL -- 2020-05-03 21:30
 - When toggling in the legend, it now shows visual feedback (grays out when disabled)
+
+derekL -- 2020-05-04 10:38
+- Edited csv data to fix the covid deaths dropping to 0 after data stopped being recorded
+- Fixed program drawing everything over existing stuff when lines are toggled

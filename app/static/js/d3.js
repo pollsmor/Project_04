@@ -36,7 +36,7 @@ var colors = {'cholera-hispaniola-2010': "BlueViolet",
                 'mers' : "Thistle"};
 
 var render = function() {
-
+  d3.select('svg').html("")
   svg.attr("width", width).attr("height", height);
 
   var x = d3.scaleLinear()
