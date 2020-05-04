@@ -52,7 +52,8 @@ var render = function() {
       .attr("transform", "translate(" + (width / 2) + "," + (height - 5) + ")")
     .text("Days since beginning of outbreak");
 
-  var y = d3.scaleLinear()
+  var y = d3.scalePow()
+    .exponent(.2)
     .domain([0, 200000])
     .range([height - 50, 0]);
   var yAxis = d3.axisLeft()
@@ -65,7 +66,7 @@ var render = function() {
       .attr("y",  15)
       .attr("x",-(height / 2))
       .style("text-anchor", "middle")
-      .text("Deaths per day");
+      .text("Total Deaths");
 
   var line = d3.line()
     .x(d => x(d.day))

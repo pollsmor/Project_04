@@ -68,3 +68,5 @@ kevinL -- 2020-05-03 21:30
 derekL -- 2020-05-04 10:38
 - Edited csv data to fix the covid deaths dropping to 0 after data stopped being recorded
 - Fixed program drawing everything over existing stuff when lines are toggled
+- Fixed axis naming error
+- Adjusted y axis to prevent all the lines from clumping at the bottom
