@@ -1,11 +1,13 @@
-var svg = d3.select("svg");
-var x, y;
-var width = 750;
-var height = 500;
-
-var days = 300;
-
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
+const svg = d3.select("svg");
+var height = 500;
+var width = 750;
+var x, y; //x and y-axis scaling
+var days = 100;
+
+const line = d3.line() //line generator
+  .x(d => x(d.day))
+  .y(d => y(d.deaths));
 
 var rendered = {'cholera-hispaniola-2010': true,
                 'covid-19': true,
@@ -21,56 +23,59 @@ var rendered = {'cholera-hispaniola-2010': true,
                 'meningitis' : true,
                 'mers' : true};
 
-var colors = {'cholera-hispaniola-2010': "BlueViolet",
-                'covid-19': "DodgerBlue",
-                'ebola-wafrica-2014' : "DarkGreen",
-                'swine-world-2009' : "DarkSlateGray",
-                'sars' : "Gold",
-                'measles-2019' : "IndianRed",
-                'measles-2011' : "HotPink",
-                'cholera-zimbabwe-2008' : "SandyBrown",
-                'cholera-yemen-2016' : "Silver",
-                'ebola-drcuganda-2018' : "GoldenRod",
-                'swine-india-2015' : "SteelBlue",
-                'meningitis' : "SpringGreen",
-                'mers' : "Thistle"};
+const colors = {'cholera-hispaniola-2010': "BlueViolet",
+              'covid-19': "DodgerBlue",
+              'ebola-wafrica-2014' : "DarkGreen",
+              'swine-world-2009' : "DarkSlateGray",
+              'sars' : "Gold",
+              'measles-2019' : "IndianRed",
+              'measles-2011' : "HotPink",
+              'cholera-zimbabwe-2008' : "SandyBrown",
+              'cholera-yemen-2016' : "Silver",
+              'ebola-drcuganda-2018' : "GoldenRod",
+              'swine-india-2015' : "SteelBlue",
+              'meningitis' : "SpringGreen",
+              'mers' : "Thistle"};
 
 var render = function() {
-  d3.select('svg').html("")
   svg.attr("width", width).attr("height", height);
 
-  var x = d3.scaleLinear()
+  //X-axis =====================================================================
+  x = d3.scaleLinear()
     .domain([1, days])
     .range([0, width - 50]);
-  var xAxis = d3.axisBottom()
-    .scale(x);
+
+  var xAxis = d3.axisBottom().scale(x);
+
   svg.append("g")
       .attr("transform", "translate(80," + (height - 40) + ")")
     .call(xAxis);
+
   svg.append("text")
       .style("text-anchor","middle")
       .attr("transform", "translate(" + (width / 2) + "," + (height - 5) + ")")
     .text("Days since beginning of outbreak");
+  // ===========================================================================
 
-  var y = d3.scalePow()
+  //Y-axis =====================================================================
+  y = d3.scalePow()
     .exponent(.2)
     .domain([0, 200000])
     .range([height - 50, 0]);
-  var yAxis = d3.axisLeft()
-    .scale(y);
+
+  var yAxis = d3.axisLeft().scale(y);
+
   svg.append("g")
       .attr("transform", "translate(80, 10)")
     .call(yAxis);
+
   svg.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y",  15)
-      .attr("x",-(height / 2))
+      .attr("y",  20)
+      .attr("x", -(height / 2))
       .style("text-anchor", "middle")
       .text("Total Deaths");
-
-  var line = d3.line()
-    .x(d => x(d.day))
-    .y(d => y(d.deaths));
+  // ===========================================================================
 
   for (var name in rendered) {
     if (rendered[name]) {
@@ -80,20 +85,21 @@ var render = function() {
           .attr("stroke", colors[name])
           .attr("stroke-width", 1.5)
           .attr("d", line(data[name]));
-      }
-    };
+    }
+  };
 };
 
 var toggle = function(e) {
   if (e.target.style.color === "gray") e.target.style.color = 'black';
   else e.target.style.color = "gray";
+
   name = e.target.getAttribute("data-name");
   rendered[name] = !(rendered[name]);
   svg.selectAll("path").remove();
   render();
 };
 
-var eps = document.getElementsByClassName("name");
+const eps = document.getElementsByClassName("name");
 
 for (i = 0; i < eps.length; i++) {
   eps[i].addEventListener("click", toggle);
