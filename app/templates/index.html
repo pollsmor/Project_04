@@ -10,49 +10,77 @@
     <svg id="svg"></svg>
 
     <div id="legend">
-      <h2 style="display: inline-block;">Legend</h2>
+      <h4 style="display: inline-block;">Legend</h4>
       <img class="question" src="../static/question.png" data-toggle="tooltip"
            title="Click each epidemic in the legend to toggle visibility.">
       <br>
 
-      <div class="line" style="background-color: BlueViolet;"></div>
-      <span class="name" data-name = "cholera-hispaniola-2010">Cholera (Hispaniola, 2010-13)</span><br>
-
-      <div class="line" style="background-color: DodgerBlue;"></div>
-      <span class="name"  data-name = "covid-19">COVID-19 (World, 2019-now)</span><br>
-
-      <div class="line" style="background-color: DarkGreen;"></div>
-      <span class="name" data-name = "ebola-wafrica-2014">Ebola (West Africa, 2014)</span><br>
-
-      <div class="line" style="background-color: DarkSlateGray;"></div>
-      <span class="name" data-name = "swine-world-2009">Swine Flu (World, 2009-10)</span><br>
-
-      <div class="line" style="background-color: Gold;"></div>
-      <span class="name" data-name = "sars">SARS (China & Hong Kong, 2002-04)</span><br>
-
-      <div class="line" style="background-color: IndianRed;"></div>
-      <span class="name"  data-name = "measles-2019">Measles (DRC, 2019-now)</span><br>
-
-      <div class="line" style="background-color: HotPink;"></div>
-      <span class="name"  data-name = "measles-2011">Measles (DRC, 2011-14)</span><br>
-
-      <div class="line" style="background-color: SandyBrown;"></div>
-      <span class="name" data-name = "cholera-zimbabwe-2008">Cholera (Zimbabwe, 2008-09)</span><br>
-
-      <div class="line" style="background-color: Silver;"></div>
-      <span class="name"  data-name = "cholera-yemen-2016">Cholera (Yemen, 2016-now)</span><br>
-
-      <div class="line" style="background-color: GoldenRod;"></div>
-      <span class="name "data-name = "ebola-drcuganda-2018">Ebola (DRC & Uganda, 2018-now)</span><br>
-
-      <div class="line" style="background-color: SteelBlue;"></div>
-      <span class="name" data-name = "swine-india-2015">Swine Flu (India, 2015)</span><br>
-
-      <div class="line" style="background-color: SpringGreen;"></div>
-      <span class="name" data-name = "meningitis">Meningitis (World, 2009-10)</span><br>
-
-      <div class="line" style="background-color: Thistle;"></div>
-      <span class="name" data-name = "mers">MERS (World, 2012-now)</span><br>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: BlueViolet;"></div>
+          <span class="name" data-name = "cholera-hispaniola-2010">Cholera (Hispaniola, 2010-13)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: DodgerBlue;"></div>
+          <span class="name"  data-name = "covid-19">COVID-19 (World, 2019-now)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: DarkGreen;"></div>
+          <span class="name" data-name = "ebola-wafrica-2014">Ebola (West Africa, 2014)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: DarkSlateGray;"></div>
+          <span class="name" data-name = "swine-world-2009">Swine Flu (World, 2009-10)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: Gold;"></div>
+          <span class="name" data-name = "sars">SARS (China & Hong Kong, 2002-04)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: IndianRed;"></div>
+          <span class="name"  data-name = "measles-2019">Measles (DRC, 2019-now)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: HotPink;"></div>
+          <span class="name"  data-name = "measles-2011">Measles (DRC, 2011-14)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: SandyBrown;"></div>
+          <span class="name" data-name = "cholera-zimbabwe-2008">Cholera (Zimbabwe, 2008-09)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: Silver;"></div>
+          <span class="name"  data-name = "cholera-yemen-2016">Cholera (Yemen, 2016-now)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: GoldenRod;"></div>
+          <span class="name "data-name = "ebola-drcuganda-2018">Ebola (DRC & Uganda, 2018-now)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: SteelBlue;"></div>
+          <span class="name" data-name = "swine-india-2015">Swine Flu (India, 2015)</span><br>
+        </div>
+        <div class="column">
+          <div class="line" style="background-color: SpringGreen;"></div>
+          <span class="name" data-name = "meningitis">Meningitis (World, 2009-10)</span><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="line" style="background-color: Thistle;"></div>
+          <span class="name" data-name = "mers">MERS (World, 2012-now)</span><br>
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript">

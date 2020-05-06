@@ -70,3 +70,7 @@ derekL -- 2020-05-04 10:38
 - Fixed program drawing everything over existing stuff when lines are toggled
 - Fixed axis naming error
 - Adjusted y axis to prevent all the lines from clumping at the bottom
+
+kevinL -- 2020-05-06 08:30
+- Two column layout for legend for better use of space
+  - (and to fit everything on one screen on a 13-inch laptop)

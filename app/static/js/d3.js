@@ -1,7 +1,7 @@
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
 const svg = d3.select("svg");
 var height = 500;
-var width = 750;
+var width = 1000;
 var x, y; //x and y-axis scaling
 var days = 100;
 
@@ -42,8 +42,8 @@ var render = function() {
 
   //X-axis =====================================================================
   x = d3.scaleLinear()
-    .domain([1, days])
-    .range([0, width - 50]);
+    .domain([1, days + 2])
+    .range([0, width - 80]);
 
   var xAxis = d3.axisBottom().scale(x);
 
