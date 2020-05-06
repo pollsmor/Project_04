@@ -27,18 +27,32 @@ var rendered = {'cholera-hispaniola-2010': true,
                 'mers' : true};
 
 const colors = {'cholera-hispaniola-2010': "BlueViolet",
-              'covid-19': "DodgerBlue",
-              'ebola-wafrica-2014' : "DarkGreen",
-              'swine-world-2009' : "DarkSlateGray",
-              'sars' : "Gold",
-              'measles-2019' : "IndianRed",
-              'measles-2011' : "HotPink",
-              'cholera-zimbabwe-2008' : "SandyBrown",
-              'cholera-yemen-2016' : "Silver",
-              'ebola-drcuganda-2018' : "GoldenRod",
-              'swine-india-2015' : "SteelBlue",
-              'meningitis' : "SpringGreen",
-              'mers' : "Thistle"};
+                'covid-19': "DodgerBlue",
+                'ebola-wafrica-2014' : "DarkGreen",
+                'swine-world-2009' : "DarkSlateGray",
+                'sars' : "Gold",
+                'measles-2019' : "IndianRed",
+                'measles-2011' : "HotPink",
+                'cholera-zimbabwe-2008' : "SandyBrown",
+                'cholera-yemen-2016' : "Silver",
+                'ebola-drcuganda-2018' : "GoldenRod",
+                'swine-india-2015' : "SteelBlue",
+                'meningitis' : "SpringGreen",
+                'mers' : "Thistle"};
+
+var yMaxes = {'cholera-hispaniola-2010': 9000,
+                'covid-19': 190000,
+                'ebola-wafrica-2014' : 13000,
+                'swine-world-2009' : 320000,
+                'sars' : 1000,
+                'measles-2019' : 6000,
+                'measles-2011' : 3000,
+                'cholera-zimbabwe-2008' : 5000,
+                'cholera-yemen-2016' : 3000,
+                'ebola-drcuganda-2018' : 3000,
+                'swine-india-2015' : 3000,
+                'meningitis' : 2000,
+                'mers' : 100};
 
 var clear = function() {
   svg.selectAll("*").remove();
@@ -68,7 +82,7 @@ var render = function() {
   //Y-axis =====================================================================
   y = d3.scalePow()
     .exponent(.2)
-    .domain([0, 300000])
+    .domain([0, 320000])
     .range([height - 50, 0]);
 
   var yAxis = d3.axisLeft().scale(y);
