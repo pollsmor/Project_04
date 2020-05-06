@@ -87,4 +87,8 @@ kevinL -- 2020-05-06 12:00
 
 kevinL -- 2020-05-06 16:00
 - Let's use the full width of the page rather than arbitrary number
-- Throw in a title while we're at it 
+- Throw in a title while we're at it
+
+kevinL -- 2020-05-06 18:15
+- Prevent the user from disabling every single line
+  - Don't want potential divide by zero errors when implementing dynamic scaling for the Y-axis

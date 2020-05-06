@@ -25,9 +25,9 @@ This website is an interactive line graph that allows the visitor to compare var
 * Hiding specific lines to focus more closely on the remaining outbreaks
 * Choose the amount of days to look at
   - By default, the data only shows up to 300 days into an outbreak.
-  - The user may set a minimum of 100 days, and a maximum of 801 days (the extent of the dataset used).
-* Hovering over a point on a line for more granular data (e.g. on the 65th day of the COVID-19 outbreak, 3202 people have died).
-  - Compares the other outbreaks by that point in time with the equivalent for COVID-19 for more applicability to current times (total amount of deaths this many days into the start of their respective outbreaks)
+  - The user may set a minimum of 50 days, and a maximum of 801 days (the extent of the dataset used).
+* Hovering over a point on a line for more granular data
+  - Show the amount of deaths for every epidemic at once (with a vertical line running down)
 
 # Instructions for running this project
 

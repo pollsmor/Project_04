@@ -111,13 +111,27 @@ var render = function() {
   }
 };
 
-var toggle = function(e) {
-  if (e.target.style.color === "gray") e.target.style.color = 'black';
-  else e.target.style.color = "gray";
+var linesEnabled = function() {
+  var enabled = 0;
 
+  for (var name in rendered)
+    if (rendered[name]) enabled++;
+
+  return enabled;
+}
+
+var toggle = function(e) {
   name = e.target.getAttribute("data-name");
   rendered[name] = !(rendered[name]);
+  if (linesEnabled() <= 0) {
+    rendered[name] = true;
+    alert("At least one epidemic must be shown.");
+    return;
+  }
+
   svg.selectAll("path").remove();
+  if (e.target.style.color === "gray") e.target.style.color = 'black';
+  else e.target.style.color = "gray";
   render();
 };
 
