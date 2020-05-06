@@ -84,3 +84,7 @@ kevinL -- 2020-05-06 12:00
 - Hover over a line to:
   - Highlight it
   - Highlight the text of the respective epidemic in the legend
+
+kevinL -- 2020-05-06 16:00
+- Let's use the full width of the page rather than arbitrary number
+- Throw in a title while we're at it 

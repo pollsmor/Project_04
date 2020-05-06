@@ -1,7 +1,7 @@
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
 const svg = d3.select("svg");
 var height = 500;
-var width = 1000;
+var width = $(window).width() - 80;
 var x, y; //x and y-axis scaling
 
 var days = 300;

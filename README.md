@@ -1,4 +1,4 @@
-# Disease Comparison: Day by Day by ihatequarantine
+# Epidemics Comparison: Day by Day by ihatequarantine
 
 **Roster/Roles**
 - Kevin Li:
@@ -19,7 +19,7 @@
 - Albert Wan
   - Will mainly work with Flask and Python to read the CSV file
   - CSS/Bootstrap styling
-  
+
 ## Description
 This website is an interactive line graph that allows the visitor to compare various epidemics/pandemics in recent history (e.g. the 2010 Hispaniola Cholera outbreak, COVID-19, etc.) in terms of total deaths, day by day. These features are included for interactivity with the website:
 * Hiding specific lines to focus more closely on the remaining outbreaks
@@ -28,7 +28,7 @@ This website is an interactive line graph that allows the visitor to compare var
   - The user may set a minimum of 100 days, and a maximum of 801 days (the extent of the dataset used).
 * Hovering over a point on a line for more granular data (e.g. on the 65th day of the COVID-19 outbreak, 3202 people have died).
   - Compares the other outbreaks by that point in time with the equivalent for COVID-19 for more applicability to current times (total amount of deaths this many days into the start of their respective outbreaks)
-  
+
 # Instructions for running this project
 
 **Dependencies**

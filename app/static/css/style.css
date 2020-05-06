@@ -3,6 +3,10 @@ h1, h2, .line, #dayspicker, #legend, input {
   margin-right: 10px;
 }
 
+#title {
+  text-align: center;
+}
+
 .column {
   float: left;
   width: 50%;
