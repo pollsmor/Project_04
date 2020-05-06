@@ -6,7 +6,6 @@ var x, y; //x and y-axis scaling
 
 var days = 300;
 var daysPicker = document.getElementById("days");
-//var days = daysPicker.valueAsNumber; //default 100
 
 const line = d3.line() //line generator
   .x(d => x(d.day))
@@ -40,22 +39,29 @@ const colors = {'cholera-hispaniola-2010': "BlueViolet",
                 'meningitis' : "SpringGreen",
                 'mers' : "Thistle"};
 
-var yMaxes = {'cholera-hispaniola-2010': 9000,
-                'covid-19': 190000,
-                'ebola-wafrica-2014' : 13000,
-                'swine-world-2009' : 320000,
-                'sars' : 1000,
-                'measles-2019' : 6000,
-                'measles-2011' : 3000,
-                'cholera-zimbabwe-2008' : 5000,
-                'cholera-yemen-2016' : 3000,
-                'ebola-drcuganda-2018' : 3000,
-                'swine-india-2015' : 3000,
-                'meningitis' : 2000,
-                'mers' : 100};
-
 var clear = function() {
   svg.selectAll("*").remove();
+}
+
+//Helper function to determine domain for Y-axis in render function
+var getYMax = function() {
+  var max = 0;
+
+  for (var name in rendered) {
+    if ([rendered[name]]) {
+      if (name === "covid-19" && days > 113) {
+        //Only disease higher than COVID-19 by day 112 is the 2009 Swine Flu pandemic.
+        return Math.floor(Math.max(data['swine-world-2009'][days - 1]['deaths'], 177459) * 1.2);
+      }
+
+      //For some reason if I don't use parseInt() JS thinks something stupid like 2708 > 321 is true
+      if (parseInt(data[name][days - 1]['deaths']) > parseInt(max)) {
+        max = parseInt(data[name][days - 1]['deaths']);
+      }
+    }
+  }
+
+  return Math.floor(max * 1.2);
 }
 
 var render = function() {
@@ -64,7 +70,7 @@ var render = function() {
 
   //X-axis =====================================================================
   x = d3.scaleLinear()
-    .domain([1, days + 2])
+    .domain([1, days])
     .range([0, width - 80]);
 
   var xAxis = d3.axisBottom().scale(x);
@@ -80,9 +86,12 @@ var render = function() {
   // ===========================================================================
 
   //Y-axis =====================================================================
+
+  var yMax = getYMax();
+  console.log("Y-max: " + yMax);
   y = d3.scalePow()
-    .exponent(.2)
-    .domain([0, 320000])
+    .exponent(0.2)
+    .domain([0, yMax])
     .range([height - 50, 0]);
 
   var yAxis = d3.axisLeft().scale(y);
@@ -158,9 +167,9 @@ for (i = 0; i < eps.length; i++) {
 var daysPicker = document.getElementById("days");
 daysPicker.addEventListener("input", function() {
   days = daysPicker.valueAsNumber;
-  if (days > 801) {
-    daysPicker.valueAsNumber = 801;
-    days = 801;
+  if (days > 800) {
+    daysPicker.valueAsNumber = 800;
+    days = 800;
   } else if (days < 50) {
     daysPicker.valueAsNumber = 50;
     days = 50;
@@ -181,9 +190,9 @@ document.getElementById("300days").addEventListener("click", function() {
   render();
 });
 
-document.getElementById("801days").addEventListener("click", function() {
-  daysPicker.valueAsNumber = 801;
-  days = 801;
+document.getElementById("800days").addEventListener("click", function() {
+  daysPicker.valueAsNumber = 800;
+  days = 800;
   render();
 });
 

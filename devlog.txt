@@ -89,6 +89,16 @@ kevinL -- 2020-05-06 16:00
 - Let's use the full width of the page rather than arbitrary number
 - Throw in a title while we're at it
 
-kevinL -- 2020-05-06 18:15
+kevinL -- 2020-05-06 19:45
 - Prevent the user from disabling every single line
   - Don't want potential divide by zero errors when implementing dynamic scaling for the Y-axis
+- Dictionary to make it easier to implement dynamic Y-axis
+- Dynamic Y-axis
+- Design doc
+  - Update minimum days to 50
+  - Change to multi-line interactivity rather than single
+  - Update component map/data layout diagram to fit better with current state of project
+  - Update default days to 300
+  - Emphasize the fact that COVID-19 requires edge cases
+  - The X-axis doesn't require additional math for scaling
+  - Explain method of calculating scaling for Y-axis

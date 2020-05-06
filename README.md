@@ -9,7 +9,7 @@
 - Derek Leung
   - D3 work
     - Drawing the base line graph (scale does not change)
-    - Allow the user to choose how many days to show on the X-axis (minimum 100 days, maximum 801 days)
+    - Allow the user to choose how many days to show on the X-axis (minimum 100 days, maximum 800 days)
   - Will help with JavaScript if necessary
 - Justin Shaw
   - D3 work
@@ -25,7 +25,7 @@ This website is an interactive line graph that allows the visitor to compare var
 * Hiding specific lines to focus more closely on the remaining outbreaks
 * Choose the amount of days to look at
   - By default, the data only shows up to 300 days into an outbreak.
-  - The user may set a minimum of 50 days, and a maximum of 801 days (the extent of the dataset used).
+  - The user may set a minimum of 50 days, and a maximum of 800 days (the extent of the dataset used).
 * Hovering over a point on a line for more granular data
   - Show the amount of deaths for every epidemic at once (with a vertical line running down)
 
