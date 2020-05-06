@@ -63,3 +63,19 @@ h1, h2, .line, #dayspicker, #legend, input {
 .xchart .axis text {
   stroke-width: 0;
 }
+
+/* Colors =================================================================== */
+.blueviolet { background-color: BlueViolet; }
+.dodgerblue { background-color: DodgerBlue; }
+.darkgreen { background-color: DarkGreen; }
+.darkslategray { background-color: DarkSlateGray; }
+.gold { background-color: Gold; }
+.indianred { background-color: IndianRed; }
+.hotpink { background-color: HotPink; }
+.sandybrown { background-color: SandyBrown; }
+.silver { background-color: Silver; }
+.goldenrod { background-color: GoldenRod; }
+.steelblue { background-color: SteelBlue; }
+.springgreen { background-color: SpringGreen; }
+.thistle { background-color: Thistle; }
+/* ========================================================================== */

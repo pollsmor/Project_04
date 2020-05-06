@@ -80,3 +80,7 @@ kevinL -- 2020-05-06 12:00
     one extreme to the other
   - Tooltip explaining how to use the feature
 - Fixed an error in the dataset
+- Use CSS on classes for colors rather than use style attribute
+- Hover over a line to:
+  - Highlight it
+  - Highlight the text of the respective epidemic in the legend

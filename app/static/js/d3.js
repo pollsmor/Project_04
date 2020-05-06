@@ -87,14 +87,28 @@ var render = function() {
 
   for (var name in rendered) {
     if (rendered[name]) {
+      var temp = name;
         svg.append("path")
           .attr("transform", "translate(80, 10)")
+          .attr("name", name)
           .attr("fill", "none")
           .attr("stroke", colors[name])
-          .attr("stroke-width", 1.5)
-          .attr("d", line(data[name]));
+          .attr("stroke-width", 3)
+          .attr("d", line(data[name]))
+          .on("mouseover", function() {
+            d3.select(this).style("stroke-width", 4.5);
+            var name = d3.select(this).attr("name");
+            var el = document.querySelector("[data-name=" + name + "]");
+            el.style['font-weight'] = "bold";
+          })
+          .on("mouseout", function() {
+            d3.select(this).style("stroke-width", 3);
+            var name = d3.select(this).attr("name");
+            var el = document.querySelector("[data-name=" + name + "]");
+            el.style['font-weight'] = "normal";
+          })
     }
-  };
+  }
 };
 
 var toggle = function(e) {
@@ -126,18 +140,23 @@ daysPicker.addEventListener("input", function() {
 
   render();
 });
-//var days = daysPicker.valueAsNumber; //default 100
 
 document.getElementById("50days").addEventListener("click", function() {
   daysPicker.valueAsNumber = 50;
   days = 50;
   render();
-})
+});
+
+document.getElementById("300days").addEventListener("click", function() {
+  daysPicker.valueAsNumber = 300;
+  days = 300;
+  render();
+});
 
 document.getElementById("801days").addEventListener("click", function() {
   daysPicker.valueAsNumber = 801;
   days = 801;
   render();
-})
+});
 
 render();
