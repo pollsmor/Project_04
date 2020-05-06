@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Disease Comparison: Day by Day</title>
+    <title>Epidemics Comparison: Day by Day</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
     <div id="title">
@@ -18,7 +19,7 @@
       <img class="question" src="../static/question.png" data-toggle="tooltip"
            title="Choose the amount of data to show on the X-axis using the
                   up and down arrows. The minimum is set to 50 days and the
-                  maximum is set to 801 days (the extent of the dataset used.)">
+                  maximum is set to 801 days (the extent of the dataset used).">
       <br>
       <span style="display: inline-block;">
         <!-- Only allow changing days with arrows not typing -->
