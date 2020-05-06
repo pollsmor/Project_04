@@ -1,4 +1,4 @@
-h1, h2, .line, #legend {
+h1, h2, .line, #dayspicker, #legend, input {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -54,8 +54,12 @@ h1, h2, .line, #legend {
   visibility: visible;
 }
 
-.tt{
+.tt {
   float:left;
   position: relative;
   padding-right: 100px;
+}
+
+.xchart .axis text {
+  stroke-width: 0;
 }

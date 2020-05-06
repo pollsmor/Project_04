@@ -9,6 +9,22 @@
   <body>
     <svg id="svg"></svg>
 
+    <div id="dayspicker">
+      <h4 style="display: inline-block;">Amount of days to show</h4>
+      <img class="question" src="../static/question.png" data-toggle="tooltip"
+           title="Choose the amount of data to show on the X-axis using the
+                  up and down arrows. The minimum is set to 50 days and the
+                  maximum is set to 801 days (the extent of the dataset used.)">
+      <br>
+      <span style="display: inline-block;">
+        <!-- Only allow changing days with arrows not typing -->
+        <input id="days" type="number" min="50" max="801" value="300" onKeyDown="return false">
+      </span>
+      <button id="50days" type="button" class="btn btn-primary">50 days</button>
+      <button id="801days" type="button" class="btn btn-primary">801 days</button>
+    </div>
+    <br>
+
     <div id="legend">
       <h4 style="display: inline-block;">Legend</h4>
       <img class="question" src="../static/question.png" data-toggle="tooltip"

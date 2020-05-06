@@ -3,7 +3,10 @@ const svg = d3.select("svg");
 var height = 500;
 var width = 1000;
 var x, y; //x and y-axis scaling
-var days = 100;
+
+var days = 300;
+var daysPicker = document.getElementById("days");
+//var days = daysPicker.valueAsNumber; //default 100
 
 const line = d3.line() //line generator
   .x(d => x(d.day))
@@ -37,7 +40,12 @@ const colors = {'cholera-hispaniola-2010': "BlueViolet",
               'meningitis' : "SpringGreen",
               'mers' : "Thistle"};
 
+var clear = function() {
+  svg.selectAll("*").remove();
+}
+
 var render = function() {
+  clear();
   svg.attr("width", width).attr("height", height);
 
   //X-axis =====================================================================
@@ -60,7 +68,7 @@ var render = function() {
   //Y-axis =====================================================================
   y = d3.scalePow()
     .exponent(.2)
-    .domain([0, 200000])
+    .domain([0, 300000])
     .range([height - 50, 0]);
 
   var yAxis = d3.axisLeft().scale(y);
@@ -104,5 +112,32 @@ const eps = document.getElementsByClassName("name");
 for (i = 0; i < eps.length; i++) {
   eps[i].addEventListener("click", toggle);
 };
+
+var daysPicker = document.getElementById("days");
+daysPicker.addEventListener("input", function() {
+  days = daysPicker.valueAsNumber;
+  if (days > 801) {
+    daysPicker.valueAsNumber = 801;
+    days = 801;
+  } else if (days < 50) {
+    daysPicker.valueAsNumber = 50;
+    days = 50;
+  }
+
+  render();
+});
+//var days = daysPicker.valueAsNumber; //default 100
+
+document.getElementById("50days").addEventListener("click", function() {
+  daysPicker.valueAsNumber = 50;
+  days = 50;
+  render();
+})
+
+document.getElementById("801days").addEventListener("click", function() {
+  daysPicker.valueAsNumber = 801;
+  days = 801;
+  render();
+})
 
 render();
