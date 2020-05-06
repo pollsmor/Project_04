@@ -71,6 +71,12 @@ derekL -- 2020-05-04 10:38
 - Fixed axis naming error
 - Adjusted y axis to prevent all the lines from clumping at the bottom
 
-kevinL -- 2020-05-06 08:30
+kevinL -- 2020-05-06 12:00
 - Two column layout for legend for better use of space
   - (and to fit everything on one screen on a 13-inch laptop)
+- Ability to change amount of days shown on the X-axis on demand
+  - Directly changing the number is disabled, must use arrows
+  - Dedicated min and max buttons so the user doesn't spend 30 seconds going from
+    one extreme to the other
+  - Tooltip explaining how to use the feature
+- Fixed an error in the dataset
