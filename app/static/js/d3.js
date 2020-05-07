@@ -48,11 +48,12 @@ var getYMax = function() {
   var max = 0;
 
   for (var name in rendered) {
-    if ([rendered[name]]) {
+    if (rendered[name]) {
       if (name === "covid-19" && days > 113) {
         //Only disease higher than COVID-19 by day 112 is the 2009 Swine Flu pandemic.
         return Math.floor(Math.max(data['swine-world-2009'][days - 1]['deaths'], 177459) * 1.2);
       }
+
 
       //For some reason if I don't use parseInt() JS thinks something stupid like 2708 > 321 is true
       if (parseInt(data[name][days - 1]['deaths']) > parseInt(max)) {
@@ -151,8 +152,6 @@ var toggle = function(e) {
     alert("At least one epidemic must be shown.");
     return;
   }
-
-  svg.selectAll("path").remove();
   if (e.target.style.color === "gray") e.target.style.color = 'black';
   else e.target.style.color = "gray";
   render();
