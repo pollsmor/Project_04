@@ -85,7 +85,7 @@ kevinL -- 2020-05-06 12:00
   - Highlight it
   - Highlight the text of the respective epidemic in the legend
 
-AlbertW --  2020-05-06 14:00
+albertW --  2020-05-06 14:00
 -helped style css
 -fixed same color error on legend
 
@@ -110,3 +110,7 @@ kevinL -- 2020-05-06 19:45
 justinS -- 2020-05-06 23:39
 - Y-axis only affected by rendered lines
 - Clicked lines are disabled
+
+albertW -- 2020-05-07 12:57
+- helped with multi line variability html portion
+- not sure how to do rest
