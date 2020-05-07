@@ -131,6 +131,12 @@ var render = function() {
             var el = document.querySelector("[data-name=" + name + "]");
             el.style['font-weight'] = "normal";
           })
+          .on("click", function() {
+            var name = d3.select(this).attr("name");
+            var el = document.querySelector("[data-name=" + name + "]");
+            el.style['font-weight'] = "normal";
+            el.click();
+          })
     }
   }
 };
