@@ -102,3 +102,7 @@ kevinL -- 2020-05-06 19:45
   - Emphasize the fact that COVID-19 requires edge cases
   - The X-axis doesn't require additional math for scaling
   - Explain method of calculating scaling for Y-axis
+
+justinS -- 2020-05-06 23:39
+- Y-axis only affected by rendered lines
+- Clicked lines are disabled 
