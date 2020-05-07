@@ -112,5 +112,5 @@ justinS -- 2020-05-06 23:39
 - Clicked lines are disabled
 
 albertW -- 2020-05-07 12:57
-- helped with multi line variability html portion
+- helped with multi line interactivity html portion
 - not sure how to do rest
