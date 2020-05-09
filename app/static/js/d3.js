@@ -50,12 +50,12 @@ var getYMax = function() {
   for (var name in rendered) {
     if (rendered[name]) {
       if (name === "covid-19" && days > 113) {
-        //Only disease higher than COVID-19 by day 112 is the 2009 Swine Flu pandemic.
+        //Only disease higher than COVID-19 by day 113 is the 2009 Swine Flu pandemic.
         return Math.floor(Math.max(data['swine-world-2009'][days - 1]['deaths'], 177459) * 1.2);
       }
 
 
-      //For some reason if I don't use parseInt() JS thinks something stupid like 2708 > 321 is true
+      //For some reason if I don't use parseInt() JS thinks something stupid like 321 > 2708 is true
       if (parseInt(data[name][days - 1]['deaths']) > parseInt(max)) {
         max = parseInt(data[name][days - 1]['deaths']);
       }
@@ -113,32 +113,43 @@ var render = function() {
     if (rendered[name]) {
       var temp = name;
         svg.append("path")
+          .attr("class", "graph-line")
           .attr("transform", "translate(80, 10)")
           .attr("name", name)
           .attr("fill", "none")
           .attr("stroke", colors[name])
           .attr("stroke-width", 3)
-          .attr("d", line(data[name]))
-          .on("mouseover", function() {
-            d3.select(this).style("stroke-width", 4.5);
-            var name = d3.select(this).attr("name");
-            var el = document.querySelector("[data-name=" + name + "]");
-            el.style['font-weight'] = "bold";
-          })
-          .on("mouseout", function() {
-            d3.select(this).style("stroke-width", 3);
-            var name = d3.select(this).attr("name");
-            var el = document.querySelector("[data-name=" + name + "]");
-            el.style['font-weight'] = "normal";
-          })
-          .on("click", function() {
-            var name = d3.select(this).attr("name");
-            var el = document.querySelector("[data-name=" + name + "]");
-            el.style['font-weight'] = "normal";
-            el.click();
-          })
+          .attr("d", line(data[name]));
     }
   }
+
+  var mouseG = svg.append("g");
+  mouseG.append("path") //black vertical bar that follows mouse movement
+    .attr("class", "mouse-line")
+    .style("stroke", "black")
+    .style("stroke-width", "1px")
+    .style("opacity", "0");
+
+  mouseG.append("svg:rect") //append a rect to catch mouse movements
+    .attr("width", width)
+    .attr("height", height)
+    .attr("fill", "none")
+    .attr("pointer-events", "all")
+    .on("mouseout", function() {
+      d3.select(".mouse-line").style("opacity", "0");
+    })
+    .on("mouseover", function() {
+      d3.select(".mouse-line").style("opacity", "1");
+    })
+    .on("mousemove", function() {
+      var mouse = d3.mouse(this);
+      d3.select(".mouse-line")
+      .attr("d", function() {
+        var d = "M" + mouse[0] + "," + (height - 40);
+        d += " " + mouse[0] + "," + 0;
+        return d;
+      });
+    });
 };
 
 var linesEnabled = function() {
@@ -151,15 +162,18 @@ var linesEnabled = function() {
 }
 
 var toggle = function(e) {
-  name = e.target.getAttribute("data-name");
+  var name = e.target.getAttribute("data-name");
   rendered[name] = !(rendered[name]);
   if (linesEnabled() <= 0) {
     rendered[name] = true;
     alert("At least one epidemic must be shown.");
     return;
   }
+
   if (e.target.style.color === "gray") e.target.style.color = 'black';
   else e.target.style.color = "gray";
+
+  e.target.style["font-weight"] = "normal";
   render();
 };
 
@@ -167,6 +181,22 @@ const eps = document.getElementsByClassName("name");
 
 for (i = 0; i < eps.length; i++) {
   eps[i].addEventListener("click", toggle);
+
+  eps[i].addEventListener("mouseover", function(e) {
+    var name = e.target.getAttribute("data-name");
+    if (!rendered[name]) return; //this really isn't but helpful for suppressing an error
+    this.style["font-weight"] = "bold";
+    var graphLine = document.querySelector("[name=" + name + "]");
+    graphLine.style["stroke-width"] = 4.5;
+  });
+
+  eps[i].addEventListener("mouseout", function(e) {
+    var name = e.target.getAttribute("data-name");
+    if (!rendered[name]) return;
+    this.style["font-weight"] = "normal";
+    var graphLine = document.querySelector("[name=" + name + "]");
+    graphLine.style["stroke-width"] = 3;
+  });
 };
 
 var daysPicker = document.getElementById("days");
