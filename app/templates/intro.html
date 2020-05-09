@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <style>
-        h1 {text-align: center;}
-        h3 {text-align: center;}
-        p {text-align: center;}
-        div {text-align: center;}
-      </style>
-
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
     <body>
-      <h1> Project4</h1><br>
-      <h3> by: Derek Leung, Kevin Li, Justin Shaw, and Albert wan </h3>
-      <p>
-        Our webpage compares the epidemics in recent years. What's special about our
-        webpage is that it compares the epidemics day by day since the beginning
-        of each outbreak, which shows us how severe each disease is. On the y-axis,
-        it shows total deaths and the x-axis shows number of days. Our graph is easy to
-        decipher For example, one can easily see that COVID-19 seems to be the
-        most severe from the curve, while the MERS disease seems to be the least
-        severe based on the curve.
-      </p>
-      <div id="button"><a href="page"> Let's see it! </a></div>
+      <div class="jumbotron">
+        <h1 class="display-4">Epidemics Compared: Day by Day</h1>
+        <p class="lead">By ihatequarantine (Derek Leung, Kevin Li, Justin Shaw, and Albert Wan)</p>
+        <hr class="my-4">
+        <p>
+          Our webpage compares various epidemics from recent years. It compares
+          them day by day from the beginning of each. The X-axis shows the number
+          of elapsed days and the Y-axis shows the total amount of deaths caused by each.
+        </p>
+        <hr class="my-4">
+        <p>
+          A lot of inciteful data can be deciphered from our graph; for example,
+          one can easily see how COVID-19 took the world by storm, while the MERS
+          epidemic is slothful enough to make you question whether it should even
+          be classified as one.
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="page">Let's dive in!</a>
+        </p>
+      </div>
     </body>
 </html>
