@@ -1,11 +1,13 @@
 $("[data-toggle=tooltip]").tooltip(); //enable Bootstrap tooltips
 const svg = d3.select("svg");
-var height = 500;
-var width = $(window).width() - 80;
+var height = $(window).height() * 0.5;
+var width = $(window).width() - 10;
 var x, y; //x and y-axis scaling
 
 var days = 300;
+var selectedDay; //for vertical line
 var daysPicker = document.getElementById("days");
+var cells = document.getElementsByClassName("deaths");
 
 const line = d3.line() //line generator
   .x(d => x(d.day))
@@ -65,6 +67,33 @@ var getYMax = function() {
   return Math.floor(max * 1.2);
 }
 
+var getDayData = function(day) { //helper function for multi-line interactivity
+  var d = [];
+
+  for (var name in rendered) {
+    if (name === "covid-19" && day > 113) continue; //since COVID-19's data stops on day 113
+    d.push(parseInt(data[name][day - 1]['deaths']));
+  }
+
+  return d;
+}
+
+var updateTable = function(day) { //helper function for multi-line interactivity
+  var dayData = getDayData(day);
+
+  if (dayData.length == 13) {
+    for (var i = 0; i < 13; i++) {
+      cells[i].innerHTML = dayData[i];
+    }
+  } else { //COVID-19's data is missing
+    cells[0].innerHTML = dayData[0];
+    cells[1].innerHTML = "N/A";
+    for (var i = 2; i < 13; i++) {
+      cells[i].innerHTML = dayData[i - 1];
+    }
+  }
+}
+
 var render = function() {
   clear();
   svg.attr("width", width).attr("height", height);
@@ -103,12 +132,11 @@ var render = function() {
 
   svg.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y",  20)
+      .attr("y",  25)
       .attr("x", -(height / 2))
       .style("text-anchor", "middle")
       .text("Total Deaths");
   // ===========================================================================
-
   for (var name in rendered) {
     if (rendered[name]) {
       var temp = name;
@@ -149,8 +177,11 @@ var render = function() {
         d += " " + mouse[0] + "," + 0;
         return d;
       });
-    });
-};
+
+      var day = Math.floor(x.invert(d3.mouse(this)[0] - 80));
+      updateTable(day);
+  });
+}
 
 var linesEnabled = function() {
   var enabled = 0;

@@ -114,3 +114,15 @@ justinS -- 2020-05-06 23:39
 albertW -- 2020-05-07 12:57
 - helped with multi line interactivity html portion
 - not sure how to do rest
+
+albertW -- 2020-05-09 13:30
+- Introductory section for webpage
+
+kevinL -- 2020-05-09 14:30
+- Implementing a vertical line down the graph necessitates a few changes.
+  - Hovering over a line itself no longer does anything.
+  - Instead, hover over the line's corresponding item in the legends section to highlight the line.
+- A vertical line follows your cursor now
+
+kevinL -- 2020-05-10 19:00
+- Table stats update according to day that is being hovered over via vertical bar
