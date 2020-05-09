@@ -180,6 +180,7 @@ var render = function() {
 
       var day = Math.floor(x.invert(d3.mouse(this)[0] - 80));
       updateTable(day);
+      document.getElementById("daynum").innerHTML = day;
   });
 }
 
