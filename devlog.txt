@@ -131,5 +131,6 @@ kevinL -- 2020-05-10 19:00
 
 kevinL -- 2020-05-11 08:15
 - Incredibly basic transition when a big jump happens on the graph
+- Suggestion to zoom out when using the page
 - Ensured all requirements have been met on project page
 - This should be the final version of the design doc (only minor changes)
