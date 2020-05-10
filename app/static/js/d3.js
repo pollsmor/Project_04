@@ -9,6 +9,10 @@ var selectedDay; //for vertical line
 var daysPicker = document.getElementById("days");
 var cells = document.getElementsByClassName("deaths");
 
+//Don't want to transition when changing the days via the arrows
+//DO want a transition with a big jump (i.e. 800 days, turning off an epidemic's line)
+var transition = false;
+
 const line = d3.line() //line generator
   .x(d => x(d.day))
   .y(d => y(d.deaths));
@@ -126,9 +130,16 @@ var render = function() {
 
   var yAxis = d3.axisLeft().scale(y);
 
-  svg.append("g")
+  if (transition) {
+    svg.append("g")
       .attr("transform", "translate(80, 10)")
-    .call(yAxis);
+      .transition()
+      .call(yAxis);
+  } else {
+    svg.append("g")
+      .attr("transform", "translate(80, 10)")
+      .call(yAxis);
+  }
 
   svg.append("text")
       .attr("transform", "rotate(-90)")
@@ -140,16 +151,30 @@ var render = function() {
   for (var name in rendered) {
     if (rendered[name]) {
       var temp = name;
-        svg.append("path")
-          .attr("class", "graph-line")
-          .attr("transform", "translate(80, 10)")
-          .attr("name", name)
-          .attr("fill", "none")
-          .attr("stroke", colors[name])
-          .attr("stroke-width", 3)
-          .attr("d", line(data[name]));
+        if (transition) {
+          svg.append("path")
+            .transition()
+              .attr("class", "graph-line")
+              .attr("transform", "translate(80, 10)")
+              .attr("name", name)
+              .attr("fill", "none")
+              .attr("stroke", colors[name])
+              .attr("stroke-width", 3)
+              .attr("d", line(data[name]));
+        } else {
+          svg.append("path")
+              .attr("class", "graph-line")
+              .attr("transform", "translate(80, 10)")
+              .attr("name", name)
+              .attr("fill", "none")
+              .attr("stroke", colors[name])
+              .attr("stroke-width", 3)
+              .attr("d", line(data[name]));
+        }
     }
   }
+
+  transition = false;
 
   var mouseG = svg.append("g");
   mouseG.append("path") //black vertical bar that follows mouse movement
@@ -206,6 +231,7 @@ var toggle = function(e) {
   else e.target.style.color = "gray";
 
   e.target.style["font-weight"] = "normal";
+  transition = true;
   render();
 };
 
@@ -248,18 +274,21 @@ daysPicker.addEventListener("input", function() {
 document.getElementById("50days").addEventListener("click", function() {
   daysPicker.valueAsNumber = 50;
   days = 50;
+  transition = true;
   render();
 });
 
 document.getElementById("300days").addEventListener("click", function() {
   daysPicker.valueAsNumber = 300;
   days = 300;
+  transition = true;
   render();
 });
 
 document.getElementById("800days").addEventListener("click", function() {
   daysPicker.valueAsNumber = 800;
   days = 800;
+  transition = true;
   render();
 });
 

@@ -127,3 +127,9 @@ kevinL -- 2020-05-09 14:30
 kevinL -- 2020-05-10 19:00
 - Table stats update according to day that is being hovered over via vertical bar
 - Show the day being hovered over while we're at it
+- Polished introductory page
+
+kevinL -- 2020-05-11 08:15
+- Incredibly basic transition when a big jump happens on the graph
+- Ensured all requirements have been met on project page
+- This should be the final version of the design doc (only minor changes)
