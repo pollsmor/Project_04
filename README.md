@@ -5,7 +5,7 @@
   - Project manager
   - Update README, make sure devlog is up to date
   - Update design doc to reflect changes to project midway through
-  - Some coding for the D3 part (specifically hovering over a line for more detailed info)
+  - Some coding for the D3 part (when necessary)
 - Derek Leung
   - D3 work
     - Drawing the base line graph (scale does not change)
@@ -27,7 +27,7 @@ This website is an interactive line graph that allows the visitor to compare var
   - By default, the data only shows up to 300 days into an outbreak.
   - The user may set a minimum of 50 days, and a maximum of 800 days (the extent of the dataset used).
 * Hovering over a point on a line for more granular data
-  - Show the amount of deaths for every epidemic at once (with a vertical line running down)
+  - Show the amount of deaths for every epidemic at once as a table (with a vertical line running down acting as a "cursor")
 
 # Instructions for running this project
 
@@ -52,6 +52,6 @@ To activate the virtual environment, cd into the directory you created the envir
 
 After installing the required dependencies, all you need to do to run the program is to type into a terminal session:
 ```bash
-python3 app.py
+python3 __init__.py
 ```
 *Again, remove the 3 after the "python" if necessary.*
