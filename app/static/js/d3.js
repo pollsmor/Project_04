@@ -147,34 +147,7 @@ var render = function() {
       .attr("x", -(height / 2))
       .style("text-anchor", "middle")
       .text("Total Deaths");
-  // ===========================================================================
-  for (var name in rendered) {
-    if (rendered[name]) {
-      var temp = name;
-        if (transition) {
-          svg.append("path")
-            .transition()
-              .attr("class", "graph-line")
-              .attr("transform", "translate(80, 10)")
-              .attr("name", name)
-              .attr("fill", "none")
-              .attr("stroke", colors[name])
-              .attr("stroke-width", 3)
-              .attr("d", line(data[name]));
-        } else {
-          svg.append("path")
-              .attr("class", "graph-line")
-              .attr("transform", "translate(80, 10)")
-              .attr("name", name)
-              .attr("fill", "none")
-              .attr("stroke", colors[name])
-              .attr("stroke-width", 3)
-              .attr("d", line(data[name]));
-        }
-    }
-  }
-
-  transition = false;
+  // ==========================================================================
 
   var mouseG = svg.append("g");
   mouseG.append("path") //black vertical bar that follows mouse movement
@@ -207,6 +180,70 @@ var render = function() {
       updateTable(day);
       document.getElementById("daynum").innerHTML = day;
   });
+
+  for (var name in rendered) {
+    if (rendered[name]) {
+      var temp = name;
+        if (transition) {
+          svg.append("path")
+            .on("mouseover", function() {
+              d3.select(this).style("stroke-width", 4.5);
+              var name = d3.select(this).attr("name");
+              var el = document.querySelector("[data-name=" + name + "]");
+              el.style['font-weight'] = "bold";
+            })
+            .on("mouseout", function() {
+              d3.select(this).style("stroke-width", 3);
+              var name = d3.select(this).attr("name");
+              var el = document.querySelector("[data-name=" + name + "]");
+              el.style['font-weight'] = "normal";
+            })
+            .on("click", function() {
+              var name = d3.select(this).attr("name");
+              var el = document.querySelector("[data-name=" + name + "]");
+              el.style['font-weight'] = "normal";
+              el.click();
+            })
+            .transition()
+              .attr("class", "graph-line")
+              .attr("transform", "translate(80, 10)")
+              .attr("name", name)
+              .attr("fill", "none")
+              .attr("stroke", colors[name])
+              .attr("stroke-width", 3)
+              .attr("d", line(data[name]))
+        } else {
+          svg.append("path")
+              .attr("class", "graph-line")
+              .attr("transform", "translate(80, 10)")
+              .attr("name", name)
+              .attr("fill", "none")
+              .attr("stroke", colors[name])
+              .attr("stroke-width", 3)
+              .attr("d", line(data[name]))
+              .on("mouseover", function() {
+                d3.select(this).style("stroke-width", 4.5);
+                var name = d3.select(this).attr("name");
+                var el = document.querySelector("[data-name=" + name + "]");
+                el.style['font-weight'] = "bold";
+              })
+              .on("mouseout", function() {
+                d3.select(this).style("stroke-width", 3);
+                var name = d3.select(this).attr("name");
+                var el = document.querySelector("[data-name=" + name + "]");
+                el.style['font-weight'] = "normal";
+              })
+              .on("click", function() {
+                var name = d3.select(this).attr("name");
+                var el = document.querySelector("[data-name=" + name + "]");
+                el.style['font-weight'] = "normal";
+                el.click();
+              });
+        }
+    }
+  }
+
+  transition = false;
 }
 
 var linesEnabled = function() {
